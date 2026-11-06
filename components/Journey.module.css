@@ -126,7 +126,12 @@
   .list { display: grid; gap: 44px; list-style: none; margin: 36px auto 0; padding: 0 15px; max-width: 560px; }
   .item { transition: opacity .8s ease, transform .9s cubic-bezier(.2, .7, .2, 1); }
   .item[data-inview="false"] { opacity: 0; transform: translateY(30px); }
-  .itemImg { position: relative; width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin-bottom: 18px; box-shadow: 0 0 0 8px rgba(149, 199, 181, .25); }
+  /* centred on mobile */
+  .intro { text-align: center; }
+  .heading { margin: 0 auto; }
+  .item { text-align: center; }
+  .item .notes { justify-content: center; }
+  .itemImg { position: relative; width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin: 0 auto 18px; box-shadow: 0 0 0 8px rgba(149, 199, 181, .25); }
   .itemImg img { object-fit: cover; }
   .item .count { margin-bottom: 6px; }
   .itemName { margin: 0 0 8px; font-family: var(--serif); font-weight: 400; font-size: 30px; color: var(--heading); }
