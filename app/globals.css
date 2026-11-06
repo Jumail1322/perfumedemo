@@ -18,6 +18,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html, body { overflow-x: clip; }   /* no sideways page scroll from animations */
 body {
   margin: 0;
   font-family: var(--sans);

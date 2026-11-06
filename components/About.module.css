@@ -1,5 +1,5 @@
 /* Layout mirrors Gisla's "About" block: 75% text column, 25% image stack. */
-.about { padding: 50px 0 120px; background: #FCF8F0; }   /* cream; extra bottom space before the next section */
+.about { padding: 50px 0 120px; background: #FCF8F0; overflow-x: clip; }   /* cream; clip so animating cards never widen the page */
 .container { max-width: var(--container); margin: 0 auto; padding: 0 15px; display: flex; gap: 30px; align-items: flex-start; }
 .left { flex: 0 0 calc(75% - 30px); }
 .right { flex: 0 0 25%; }
@@ -89,5 +89,13 @@
   .left, .right { flex: none; width: 100%; }
   .statement { font-size: 20px; }
   .feature { width: 100%; margin-top: 40px; }
-  .stack { height: auto; aspect-ratio: 4 / 5; width: 88%; margin: 0 auto; }
+  .stack { height: auto; aspect-ratio: 4 / 5; width: 82%; margin: 0 auto; }
+  /* phones: smaller fan + entrance so nothing pushes past the screen edge */
+  .card {
+    transform:
+      translateX(calc(var(--dir) * (var(--s, .5) - .3) * 14px))
+      rotate(calc(var(--tilt) * (.6 + var(--s, .5) * .6)));
+  }
+  .about[data-inview="false"] .item { transform: translate(40px, 40px) rotate(calc(var(--tilt) * 3)); }
+  .about[data-inview="false"] .label { transform: translateY(14px); }
 }
