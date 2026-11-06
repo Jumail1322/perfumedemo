@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Élara — Maison de Parfum</title>
+  <meta name="description" content="Élara crafts small-batch eaux de parfum for real life — scents that stay with you, not over you." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== SECTION 1 · Announcement marquee + header ===================== -->
+  <div class="announcement" role="region" aria-label="Announcements">
+    <div class="marquee">
+      <div class="marquee__track">
+        <span class="marquee__item">Free gift wrapping on every order</span><span class="marquee__sep">✦</span>
+        <span class="marquee__item">Buy 2 eaux de parfum, get a discovery vial free</span><span class="marquee__sep">✦</span>
+        <span class="marquee__item">Free shipping across India</span><span class="marquee__sep">✦</span>
+        <span class="marquee__item">Cash on delivery available</span><span class="marquee__sep">✦</span>
+      </div>
+      <div class="marquee__track" aria-hidden="true">
+        <span class="marquee__item">Free gift wrapping on every order</span><span class="marquee__sep">✦</span>
+        <span class="marquee__item">Buy 2 eaux de parfum, get a discovery vial free</span><span class="marquee__sep">✦</span>
+        <span class="marquee__item">Free shipping across India</span><span class="marquee__sep">✦</span>
+        <span class="marquee__item">Cash on delivery available</span><span class="marquee__sep">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="header__inner">
+      <button class="header__burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+
+      <nav class="header__nav" id="nav" aria-label="Main">
+        <a href="#" class="is-active">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Discover Notes</a>
+        <a href="#">FAQs</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <a href="#" class="header__logo" aria-label="Élara home">
+        <span class="header__logo-word">ÉLARA</span>
+        <span class="header__logo-sub">Maison de Parfum</span>
+      </a>
+
+      <div class="header__icons">
+        <a href="#" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </a>
+        <a href="#" aria-label="Account" class="hide-sm">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+        </a>
+        <a href="#" aria-label="Cart, 0 items" class="header__cart">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span class="header__cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== SECTION 2 · Hero ===================== -->
+    <section class="hero">
+      <div class="hero__container">
+        <p class="hero__eyebrow reveal">New · Eau de Parfum</p>
+        <h1 class="hero__title reveal">Wear a <em>Memory</em></h1>
+
+        <div class="hero__media reveal">
+          <img src="assets/images/bottle-noir-oud.svg" alt="Élara Noir Oud eau de parfum, 50 ml glass bottle with gold cap" class="hero__bottle" width="400" height="620" />
+
+          <button class="hotspot" aria-label="View product details" aria-expanded="false" aria-controls="hero-card">
+            <span class="hotspot__ring"></span>
+          </button>
+
+          <div class="hero-card" id="hero-card" role="dialog" aria-label="Noir Oud" hidden>
+            <a href="#" class="hero-card__link">
+              <div class="hero-card__thumb"><img src="assets/images/bottle-noir-oud.svg" alt="" /></div>
+              <div class="hero-card__body">
+                <p class="hero-card__kicker">Woody · Amber</p>
+                <h3 class="hero-card__title">Noir Oud — Eau de Parfum 50 ml</h3>
+                <p class="hero-card__price"><s>₹ 2,999</s><strong>₹ 2,399</strong></p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <p class="hero__text reveal">
+          Noir Oud is made for real people like you — a warm trail of oud, saffron and amber
+          that doesn't announce itself, but stays with you from first coffee to last light.
+        </p>
+
+        <div class="hero__buttons reveal">
+          <a href="#" class="btn btn--primary">Shop Now</a>
+          <a href="#" class="btn btn--ghost">Discover the Notes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTION 3 · About ===================== -->
+    <section class="about" id="about">
+      <div class="about__container">
+        <div class="about__left">
+          <p class="about__label reveal">About Élara</p>
+          <p class="about__statement reveal">
+            We make perfume for real life — composed in small batches with rare oils and honest
+            ingredients, built to last through your day and soft enough to wear every day.
+            <span class="about__muted">No loud trails. No overpowering notes. Just a signature that feels like yours.</span>
+          </p>
+          <a href="#" class="btn btn--primary reveal">Read Our Story</a>
+
+          <div class="about__feature reveal">
+            <img src="assets/images/raw-materials.svg" alt="Amber, rose and vetiver oil droplets" class="about__feature-img" width="400" height="400" />
+            <h4 class="about__feature-title">Small-batch, IFRA-certified oils</h4>
+            <p class="about__feature-text">Up to 22% perfume concentration, aged six weeks before bottling. Vegan, cruelty-free and phthalate-free.</p>
+            <a href="#" class="about__link">View more</a>
+          </div>
+        </div>
+
+        <div class="about__right reveal">
+          <div class="stack" aria-roledescription="carousel" aria-label="Élara signatures">
+            <figure class="stack__item is-active" data-caption="Noir Oud — Eau de Parfum">
+              <img src="assets/images/scene-noir-oud.svg" alt="Noir Oud bottle on a dark wooden plinth with amber resin and oud sticks" />
+            </figure>
+            <figure class="stack__item" data-caption="Rose Santal — Eau de Parfum">
+              <img src="assets/images/scene-rose-santal.svg" alt="Rose Santal bottle on a blush plinth scattered with rose petals" />
+            </figure>
+            <figure class="stack__item" data-caption="Vétiver Bleu — Eau de Parfum">
+              <img src="assets/images/scene-vetiver-bleu.svg" alt="Vétiver Bleu bottle with a black cap among fresh green leaves" />
+            </figure>
+          </div>
+          <div class="stack__meta">
+            <p class="stack__caption" aria-live="polite">Noir Oud — Eau de Parfum</p>
+            <div class="stack__dots" role="tablist">
+              <button class="is-active" aria-label="Show Noir Oud"></button>
+              <button aria-label="Show Rose Santal"></button>
+              <button aria-label="Show Vétiver Bleu"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

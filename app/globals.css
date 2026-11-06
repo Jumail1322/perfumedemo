@@ -1,0 +1,52 @@
+/* Type & button system mirrors gisla.co:
+   script special-heading, DM Sans body 16px #464646, small pill buttons. */
+:root {
+  --brand: #205A54;        /* gisla.co primary (deep teal) */
+  --brand-soft: #95C7B5;   /* gisla.co hover / tooltip panel (mint) */
+  --deep: #052025;         /* dark section background */
+  --accent-yellow: #D8D06C; /* script accent on dark */
+  --heading: #141414;
+  --body: #464646;
+  --line: #E7E3DD;
+
+  --script: var(--font-script), cursive;
+  --serif: var(--font-serif), Georgia, serif;
+  --sans: var(--font-sans), Helvetica, Arial, sans-serif;
+
+  --container: 1200px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 16px;
+  color: var(--body);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+
+.skip-link { position: absolute; left: -9999px; top: 0; background: var(--brand); color: #fff; padding: 10px 16px; z-index: 999; }
+.skip-link:focus { left: 12px; top: 12px; }
+
+.btn {
+  display: inline-block;
+  padding: 5px 25px;
+  border-radius: 100px;
+  border: 1px solid var(--brand);
+  font: 500 16px/1.6 var(--sans);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color .4s ease, color .4s ease;
+}
+.btn--primary { background: var(--brand); color: #fff; }
+.btn--secondary { background: transparent; color: var(--brand); }
+.btn:hover { background: var(--brand-soft); color: var(--brand); }
+
+@media (max-width: 749px) {
+  body { font-size: 14px; }
+  .btn { font-size: 14px; padding: 10px 25px; }
+}
