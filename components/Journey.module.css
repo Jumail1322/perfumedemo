@@ -111,6 +111,7 @@
 
 /* ---------- mobile list ---------- */
 .list { display: none; }
+.itemTime { display: none; }
 
 @media (max-width: 1100px) {
   .track { --dial: 360px; }
@@ -121,21 +122,40 @@
 
 @media (max-width: 900px) {
   .section { padding: 64px 0 40px; }
-  .heading { font-size: 30px; }
-  .track { display: none; }
-  .list { display: grid; gap: 44px; list-style: none; margin: 36px auto 0; padding: 0 15px; max-width: 560px; }
-  .item { transition: opacity .8s ease, transform .9s cubic-bezier(.2, .7, .2, 1); }
-  .item[data-inview="false"] { opacity: 0; transform: translateY(30px); }
-  /* centred on mobile */
+  .heading { font-size: 30px; margin: 0 auto; }
   .intro { text-align: center; }
-  .heading { margin: 0 auto; }
-  .item { text-align: center; }
-  .item .notes { justify-content: center; }
-  .itemImg { position: relative; width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin: 0 auto 18px; box-shadow: 0 0 0 8px rgba(149, 199, 181, .25); }
+  .track { display: none; }
+  /* stacking cards: each card sticks near the top, the next one slides up over it */
+  .list {
+    display: block; list-style: none; margin: 32px auto 0; padding: 0 14px 40px; max-width: 560px;
+  }
+  .item {
+    position: sticky;
+    top: calc(84px + var(--i) * 16px);          /* each card sits a little lower → stacked edges peek out */
+    min-height: 68vh;
+    margin-bottom: 22vh;                          /* scroll distance before the next card arrives */
+    padding: 30px 22px 28px;
+    border-radius: 26px;
+    background: #FFFFFF;
+    border: 1px solid rgba(32, 90, 84, .10);
+    box-shadow: 0 -12px 34px rgba(20, 20, 20, .07);
+    text-align: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    transition: opacity .8s ease, transform .9s cubic-bezier(.2, .7, .2, 1);
+  }
+  .item:nth-child(even) { background: #F1F6F2; }  /* soft mint tint, alternating */
+  .item:last-child { margin-bottom: 0; }
+  .item[data-inview="false"] { opacity: 0; transform: translateY(40px) scale(.97); }
+  .itemTime {
+    position: absolute; top: 16px; right: 20px;
+    font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--brand);
+  }
+  .itemImg { position: relative; width: 168px; height: 168px; border-radius: 50%; overflow: hidden; margin: 0 auto 20px; box-shadow: 0 0 0 8px rgba(149, 199, 181, .25); }
   .itemImg img { object-fit: cover; }
   .item .count { margin-bottom: 6px; }
-  .itemName { margin: 0 0 8px; font-family: var(--serif); font-weight: 400; font-size: 30px; color: var(--heading); }
-  .itemStatement { margin: 0 0 14px; font-family: var(--serif); font-size: 21px; line-height: 1.35; color: var(--heading); }
+  .item .notes { justify-content: center; }
+  .itemName { margin: 0 0 10px; font-family: var(--serif); font-weight: 400; font-size: 32px; color: var(--heading); }
+  .itemStatement { margin: 0 0 18px; font-family: var(--serif); font-size: 21px; line-height: 1.38; color: var(--heading); }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -42,6 +42,7 @@ type Props = {
   as?: ElementType;
   className?: string;
   id?: string;
+  style?: React.CSSProperties;
   threshold?: number;
   /** Also write --s (0 → 1) as the element travels from the bottom to the top of the viewport. */
   scrollVar?: boolean;
@@ -49,7 +50,7 @@ type Props = {
 };
 
 /** Wrapper for server components that want scroll-in animations. */
-export default function InView({ as: Tag = "div", className, id, threshold, scrollVar, children }: Props) {
+export default function InView({ as: Tag = "div", className, id, style, threshold, scrollVar, children }: Props) {
   const [ref, inView] = useInView<HTMLElement>(threshold);
 
   useEffect(() => {
@@ -75,7 +76,7 @@ export default function InView({ as: Tag = "div", className, id, threshold, scro
   }, [ref, scrollVar]);
 
   return (
-    <Tag ref={ref} className={className} id={id} data-inview={inView}>
+    <Tag ref={ref} className={className} id={id} style={style} data-inview={inView}>
       {children}
     </Tag>
   );

@@ -135,7 +135,8 @@ export default function Journey() {
       {/* ---------- mobile: stacked stages ---------- */}
       <ol className={styles.list}>
         {stages.map((s, i) => (
-          <InView as="li" key={s.name} className={styles.item}>
+          <InView as="li" key={s.name} className={styles.item} style={{ "--i": i } as Vars} threshold={0.05}>
+            <span className={styles.itemTime}>{s.time}</span>
             <div className={styles.itemImg}>
               <Image src={s.image.src} alt={s.image.alt} fill sizes="160px" />
             </div>
